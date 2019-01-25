@@ -14,7 +14,12 @@ public class Sleep extends Animal {
 		this.iMale = ran.nextBoolean();
 	}
 	public Object eat(Object o) {
-		int [] ii = {1,-1,1};
+		currentRow += ran.nextInt(2*speed+1) - speed;
+		currentColumn += ran.nextInt(2*speed+1) - speed;
+		currentRow = (currentRow >= world.nRow) ? (currentRow -= world.nRow)	: currentRow;
+		currentColumn = (currentColumn>=world.nColumn) ? (currentColumn -= world.nColumn) : currentColumn;
+		currentRow = (currentRow >0) ? (currentRow -= world.nRow)	: currentRow;
+		currentColumn = (currentColumn>=0) ? (currentColumn -= world.nColumn) : currentColumn;
 		
 		return null;
 	}
